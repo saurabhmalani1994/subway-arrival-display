@@ -1,0 +1,11 @@
+# Files that run on the Pi must keep LF endings. A shell script checked out with
+# CRLF fails on Linux with a confusing "bad interpreter" error.
+*.sh            text eol=lf
+*.service       text eol=lf
+*.timer         text eol=lf
+*.py            text eol=lf
+.env.example    text eol=lf
+
+# Binary assets
+*.png binary
+*.gif binary

@@ -1,0 +1,9 @@
+[Unit]
+Description=Wi-Fi connectivity watchdog
+Documentation=https://github.com/saurabhmalani1994/subway-arrival-display
+After=network.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/wifi-watchdog.sh
+SyslogIdentifier=wifi-watchdog

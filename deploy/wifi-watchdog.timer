@@ -1,0 +1,12 @@
+[Unit]
+Description=Run the Wi-Fi watchdog every 2 minutes
+
+[Timer]
+# First check shortly after boot — this is exactly when the router race bites.
+OnBootSec=2min
+OnUnitActiveSec=2min
+AccuracySec=10s
+Unit=wifi-watchdog.service
+
+[Install]
+WantedBy=timers.target

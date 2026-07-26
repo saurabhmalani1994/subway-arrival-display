@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+
+# Local configuration and secrets
+.env
+.env.local
+
+# GTFS static data — large, re-downloadable via tools/find_stops.py
+stop_times.txt
+trips.txt
+stops.txt
+routes.txt
+gtfs_static/
+*.zip
+
+# Editor / tooling
+.claude/
+.vscode/
+.idea/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini

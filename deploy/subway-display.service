@@ -1,0 +1,24 @@
+[Unit]
+Description=Subway arrival display
+Documentation=https://github.com/saurabhmalani1994/subway-arrival-display
+# Ordering after network-online is the bit that matters: without it the app
+# races DHCP on a cold boot, fails its first fetch, and starts up blind.
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/home/pi/subway-arrival-display
+EnvironmentFile=-/home/pi/subway-arrival-display/.env
+ExecStart=/usr/bin/python3 /home/pi/subway-arrival-display/main.py
+
+Restart=always
+RestartSec=10
+
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=subway-display
+
+[Install]
+WantedBy=multi-user.target
